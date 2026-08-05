@@ -3,15 +3,18 @@
 #include "string_utils.h"
 
 int string_length(const char *text) {
-    int i;
-    const char *ptr = text;
+    int count;
+    const char *ptr;
+    
+    count = 0;
+    ptr = text; 
 
     while (*ptr != '\0') {
-        i++;
+        count++;
         ptr++;
     }
 
-    return i;
+    return count;
 }
 
 /*int count_vowels(const char *text);
