@@ -5,10 +5,16 @@
 int main(int argc, char *argv[]) {
     int i;
 
+    if (argc < 2) {
+        printf("Error: Argument(s) not detected\n");
+        printf("Please try again\n");
+        return EXIT_FAILURE;
+    }
+
     printf("Total arguments recieved: %d\n", argc - 1);
 
-    for (i = 0; i < argc - 1; i++) {
-        printf("Length of %s is %d", argv[i + 1], string_length(argv[i + 1]));
+    for (i = 1; i < argc; i++) {
+        printf("Length of %s is %d\n", argv[i], string_length(argv[i]));
     }
 
     return EXIT_SUCCESS;
