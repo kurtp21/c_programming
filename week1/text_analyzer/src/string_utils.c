@@ -17,8 +17,23 @@ int string_length(const char *text) {
     return count;
 }
 
-/*int count_vowels(const char *text);
-void reverse_string(char *text);
+int count_vowels(const char *text) {
+    int num_vowels;
+    const char *ptr;
+
+    num_vowels = 0;
+    ptr = text;
+
+    while (*ptr != '\0') {
+        if (*ptr == 'a' || *ptr == 'e' || *ptr == 'i' || *ptr == 'o' || *ptr == 'u') {
+            num_vowels++;
+        }
+        ptr++;
+    }
+
+    return num_vowels;
+}
+/*void reverse_string(char *text);
 char *copy_word(const char *source);
 
 const char *find_longest_word(int count, char *words[]);
