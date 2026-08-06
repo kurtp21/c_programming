@@ -33,8 +33,31 @@ int count_vowels(const char *text) {
 
     return num_vowels;
 }
-/*void reverse_string(char *text);
-char *copy_word(const char *source);
+
+char *copy_word(const char *source) {
+    int i;
+    int length;
+    char * dest;
+
+    length = string_length(source);
+    dest = (char*)malloc((length + 1) * sizeof(char));
+
+    if (dest == NULL) {
+        printf("Memory allocation failed\n");
+        return NULL;
+    } else {
+        for (i = 0; i < length; i++) {
+            dest[i] = source[i];
+        }       
+        
+        dest[length + 1] = '\0';
+
+        return dest;
+    }
+}
+
+/*void reverse_string(char *text) {}
+
 
 const char *find_longest_word(int count, char *words[]);
 
