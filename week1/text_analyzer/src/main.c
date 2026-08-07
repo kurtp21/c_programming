@@ -22,7 +22,11 @@ int main(int argc, char *argv[]) {
 
         word = copy_word(argv[i]);
         printf("Copied word is %s and the address is %p\n", word, (void*)&word);
-        free(word);
+        
+        printf("Word before reversing: %s\n", argv[i]);
+        
+        reverse_string(word);
+        printf("Word after reversing: %s\n", word);
     }
     return EXIT_SUCCESS;
 }

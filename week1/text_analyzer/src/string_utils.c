@@ -34,6 +34,27 @@ int count_vowels(const char *text) {
     return num_vowels;
 }
 
+void reverse_string(char *text) {
+    char *left, *right;
+    char temp;
+
+    if (*text == '\0') {
+        return;
+    } else {
+        left = text;
+        right = text + string_length(text) - 1;
+
+        while (left < right) {
+            temp = *left;
+            *left = *right;
+            *right = temp;
+
+            left++;
+            right--;
+        }
+    }
+}
+
 char *copy_word(const char *source) {
     int i;
     int length;
@@ -56,9 +77,9 @@ char *copy_word(const char *source) {
     }
 }
 
-/*void reverse_string(char *text) {}
 
 
+/*
 const char *find_longest_word(int count, char *words[]);
 
 void calculate_totals(
